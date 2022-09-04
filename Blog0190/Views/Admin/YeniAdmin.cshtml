@@ -1,0 +1,18 @@
+﻿@model Blog0190.Models.Sinifler.Admin
+@{
+    ViewBag.Title = "YeniAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Yaratmag Ucun Panel</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.User)
+    @Html.TextBoxFor(x => x.User, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Admin Yarat</button>
+</form>
+

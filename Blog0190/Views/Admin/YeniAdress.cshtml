@@ -1,0 +1,23 @@
+﻿@model Blog0190.Models.Sinifler.AddresInformation
+@{
+    ViewBag.Title = "YeniAdress";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Unvan Yaratmag Ucun Panel</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Tel)
+    @Html.TextBoxFor(x => x.Tel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adres)
+    @Html.TextAreaFor(x => x.Adres, 10, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Adress Yarat</button>
+</form>
+
+
+

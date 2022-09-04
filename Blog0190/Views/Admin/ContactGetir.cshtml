@@ -1,0 +1,40 @@
+﻿@model Blog0190.Models.Sinifler.Contact
+@{
+    ViewBag.Title = "ContactGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Elaqe Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("ContactYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.NameSurname)
+    @Html.TextBoxFor(x => x.NameSurname, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tel)
+    @Html.TextBoxFor(x => x.Tel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Time)
+    @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Message)
+    @Html.TextAreaFor(x => x.Message, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Elaqe Yenile</button>
+}
+
+
+
+
+
+

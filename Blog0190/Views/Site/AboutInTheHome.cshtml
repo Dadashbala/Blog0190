@@ -1,0 +1,29 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<About>
+
+@foreach (var x in Model)
+{
+<div class="d-flex flex-column text-center bg-white mb-5 py-5 px-4">
+    <img src="@x.BigFoto" class="img-fluid mx-auto mb-3" style="width: 100px;">
+    <h3 class="text-primary mb-3"><a href="/Site/About/"> @x.TextName</a></h3>
+    <p>@x.Text</p>
+    <div class="d-flex justify-content-center">
+        <a class="text-primary px-2" href="https://www.facebook.com/profile.php?id=100006373984826">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        
+        <a class="text-primary px-2" href="https://www.linkedin.com/in/dadash-aliyev-049ab01a0/">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="text-primary px-2" href="https://www.instagram.com/dadashaliyev22/">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a class="text-primary px-2" href="https://www.youtube.com/channel/UCJROmiunBlsk986t1mZH6CQ">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+    </div>
+    <br />
+    <img src="@x.QrCode" class="img-fluid mx-auto mb-3" style="width: 100px;">
+</div>
+}

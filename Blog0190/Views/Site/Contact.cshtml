@@ -1,0 +1,25 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<About>
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-3 pb-3">
+            <h1 class="text-primary text-uppercase" style="letter-spacing: 5px;">Contact Page</h1>
+            
+        </div>
+        <div class="row justify-content-center">
+            @Html.Action("ContactSeifesindenMesajGonder", "Site")
+            <br />
+            <br />
+            @foreach (var x in Model)
+            {
+                <iframe src="@x.Location" width="1000" height="600" style="border:0;padding-top:70px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            }
+        </div>
+    </div>
+</div>
+

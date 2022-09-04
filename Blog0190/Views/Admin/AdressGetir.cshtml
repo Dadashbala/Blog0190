@@ -1,0 +1,31 @@
+﻿@model Blog0190.Models.Sinifler.AddresInformation
+@{
+    ViewBag.Title = "AdressGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ders Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("AdressYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Tel)
+    @Html.TextBoxFor(x => x.Tel, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Adres)
+    @Html.TextAreaFor(x => x.Adres, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Unvan Yenile</button>
+}
+
+
+
+
+
+

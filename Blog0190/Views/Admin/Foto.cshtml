@@ -1,0 +1,30 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<Foto>
+@{
+    ViewBag.Title = "Foto";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Foto Melumatlar Siyahisi</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Foto</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.FotoId</td>
+            <td>@x.FotoUrl</td>
+            <td><a href="/Admin/FotoSil/@x.FotoId" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/FotoGetir/@x.FotoId" class="btn btn-warning">Yenile</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/YeniFoto/" class="btn btn-primary">Yeni Foto Yarat </a>
+<a href="@Url.Action("ExportPDFFoto","Admin")" class="btn btn-primary">Pdf </a>
+
+

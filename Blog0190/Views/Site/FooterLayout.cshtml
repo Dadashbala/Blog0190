@@ -1,0 +1,93 @@
+﻿@model Blog0190.Models.Sinifler.IEnumerableClass
+<div class="container-fluid bg-dark text-white-50 py-5 px-sm-3 px-lg-5" style="margin-top: 90px;">
+    <div class="row pt-5">
+        <div class="col-lg-3 col-md-6 mb-5">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 text-primary"><span class="text-dark"></span>Techno</h1>
+            </a>
+            @foreach (var x in Model.AboutDeyer)
+            {
+            <p>@x.Text</p>
+            }
+            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
+            <div class="d-flex justify-content-start">
+
+                <a class="btn btn-outline-primary btn-square mr-2" href="https://www.facebook.com/profile.php?id=100006373984826"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-primary btn-square mr-2" href="https://www.linkedin.com/in/dadash-aliyev-049ab01a0/"><i class="fab fa-linkedin-in"></i></a>
+                <a class="btn btn-outline-primary btn-square mr-2" href="https://www.instagram.com/dadashaliyev22/"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-primary btn-square mr-2" href="https://www.youtube.com/channel/UCJROmiunBlsk986t1mZH6CQ"><i class="fab fa-youtube"></i></a>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Pages</h5>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white-50 mb-2" href="/Site/Home/"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white-50 mb-2" href="/Site/About/"><i class="fa fa-angle-right mr-2"></i>About</a>
+                <a class="text-white-50 mb-2" href="/Site/Foto/"><i class="fa fa-angle-right mr-2"></i>Foto</a>
+                <a class="text-white-50 mb-2" href="/Site/Blog/"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                <a class="text-white-50 mb-2" href="/Site/Lesson/"><i class="fa fa-angle-right mr-2"></i>Lesson</a>
+                <a class="text-white-50 mb-2" href="/Site/Service/"><i class="fa fa-angle-right mr-2"></i>Services</a>
+                <a class="text-white-50 mb-2" href="/Site/Contact/"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                <a class="text-white-50 mb-2" href="/Admin/Blog/"><i class="fa fa-angle-right mr-2"></i>Login</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Pages</h5>
+            <div class="d-flex flex-column justify-content-start">
+                <a class="text-white-50 mb-2" href="/Site/Home/"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                <a class="text-white-50 mb-2" href="/Site/About/"><i class="fa fa-angle-right mr-2"></i>About</a>
+                <a class="text-white-50 mb-2" href="/Site/Foto/"><i class="fa fa-angle-right mr-2"></i>Foto</a>
+                <a class="text-white-50 mb-2" href="/Site/Blog/"><i class="fa fa-angle-right mr-2"></i>Blog</a>
+                <a class="text-white-50 mb-2" href="/Site/Lesson/"><i class="fa fa-angle-right mr-2"></i>Lesson</a>
+                <a class="text-white-50 mb-2" href="/Site/Service/"><i class="fa fa-angle-right mr-2"></i>Services</a>
+                <a class="text-white-50 mb-2" href="/Site/Contact/"><i class="fa fa-angle-right mr-2"></i>Contact</a>
+                <a class="text-white-50 mb-2" href="/Admin/Blog/"><i class="fa fa-angle-right mr-2"></i>Login</a>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5">
+            <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Address </h5>
+            @foreach (var x in Model.AddresDeyer)
+            {
+                <p><i class="fa fa-map-marker-alt mr-2"></i>@x.Adres</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>@x.Tel</p>
+                <p><i class="fa fa-envelope mr-2"></i>@x.Email</p>
+            }
+
+            <div id="google_translate_element"></div>
+            <script>
+                function googleTranslateElementInit() {
+                    new google.translate.TranslateElement({
+                    }, 'google_translate_element');
+                }
+            </script>
+            <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+            <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">SEARCH</h6>
+            <div class="w-100">
+                <form id="formSearch" method="post">
+                    
+                        <div class="input-group">
+                            <input type="text" class="form-control border-light" style="padding: 25px;" id="TextName" name="TextName" placeholder="Search write">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-3" type="submit" id="submitsearch" value="Search">Search</button>
+                            </div>
+                        </div>
+                    
+                </form>
+            </div>
+            <!--------------------------------------------------------->
+            @*<div style="padding-left:100px;">
+                <form id="formSearch" method="post">
+                    <div class="row" id="SearchBox">
+                        <div class="col-md-1">Search</div>
+                        <div class="col-md-1"><input type="text" id="TextName" name="TextName" /></div>
+                        <div class="col-md-1"><input class="btn btn-primary" type="submit" id="submitsearch" value="Search" /></div>
+                    </div>
+                </form>
+            </div>*@
+            <!--------------------------------------------------------->
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+
+
+            @Html.Action("BlogInTheHome", "Site")
+            
+            
+
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <!-- Author Bio -->
+                @Html.Action("AboutInTheHome", "Site")
+
+                <!-- Search Form -->
+
+                <div class="w-100">
+                    <form id="formSearch" method="post">
+
+                        <div class="input-group">
+                            <input type="text" class="form-control border-light" style="padding: 25px; width:50px;" id="TextName" name="TextName" placeholder="Search write">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary px-3" type="submit" id="submitsearch" value="Search">Search</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <br />
+                <!-- Kenar Blog Siyahisi -->
+                @Html.Action("BlogSiyahisi2", "Site")
+                <!-- Kenar Lesson Siyahisi -->
+                @Html.Action("LessonSiyahisi2", "Site")
+                <!-- Tag Cloud -->
+                @Html.Action("PageKecid", "Site")
+            </div>
+        </div>
+    </div>
+</div>

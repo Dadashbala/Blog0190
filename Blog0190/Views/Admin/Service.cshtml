@@ -1,0 +1,43 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<ServiceInformation>
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Servis Siyahisi</h2>
+<br />
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-1">Search</div>
+        <div class="col-md-2"><input type="text" id="TextName" name="TextName" /></div>
+        <div class="col-md-1"><input class="btn btn-primary" type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+</form>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Basliq</th>
+        <th>Text</th>
+        <th>Icon</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ServicesID</td>
+            <td>@x.ServicesName</td>
+            <td>@x.ServicesText</td>
+            <td>@x.ServiceIcon</td>
+            <td><a href="/Admin/ServiceSil/@x.ServicesID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/ServiceGetir/@x.ServicesID" class="btn btn-warning">Yenile</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/YeniService/" class="btn btn-primary">Yeni Servis </a>
+<a href="@Url.Action("ExportPDFService","Admin")" class="btn btn-primary">Pdf </a>
+

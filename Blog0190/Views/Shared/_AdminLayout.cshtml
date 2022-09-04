@@ -1,0 +1,46 @@
+﻿
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width: 9%; color:red;">
+        <h3 class="w3-bar-item">Menu</h3>
+        <a href="/Admin/Blog/" class="w3-bar-item w3-button">Blog</a>
+        <a href="/Admin/BLogComment/" class="w3-bar-item w3-button">Blog Comment</a>
+        <a href="/Admin/Lesson/" class="w3-bar-item w3-button">Lesson</a>
+        <a href="/Admin/LessonComment/" class="w3-bar-item w3-button">Lesson Comment</a>
+        <a href="/Admin/About/" class="w3-bar-item w3-button">About</a>
+        <a href="/Admin/AddressInformation/" class="w3-bar-item w3-button">Address</a>
+        <a href="/Admin/Foto/" class="w3-bar-item w3-button">Foto</a>
+        <a href="/Admin/Admin/" class="w3-bar-item w3-button">Admin</a>
+        <a href="/Admin/Service/" class="w3-bar-item w3-button">Service</a>
+        <a href="/Admin/Contact/" class="w3-bar-item w3-button">Contact</a>
+        <a href="/Site/Home/" class="w3-bar-item w3-button">Sayta Kec</a>
+        <a href="/Admin/LogOut/" class="w3-bar-item w3-button" style="color:orangered;">Login</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:9%">
+
+        <div class="w3-container w3-teal">
+            <h1>www.dadashaliyev.com Saytinin Admin Paneli </h1>
+        </div>
+
+       @RenderBody()
+
+        
+
+    </div>
+
+</body>
+</html>

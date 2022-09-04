@@ -1,0 +1,45 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<About>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Haqqinda Melumatlar Siyahisi</h2>
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Bashliq</th>
+        <th>Text</th>
+        <th>BoyukSekil</th>
+        <th>Sekil1</th>
+        <th>Sekil2</th>
+        <th>CV</th>
+        <th>QrCode</th>
+        <th>Location</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+<tr>
+
+    <td>@x.AboutID</td>
+    <td>@x.TextName</td>
+    <td>@x.Text</td>
+    <td>@x.BigFoto</td>
+    <td>@x.FotoOne</td>
+    <td>@x.FotoTwo</td>
+    <td>@x.CV.Substring(0,10)</td>
+    <td>@x.QrCode.Substring(0,10)</td>
+    <td>@x.Location.Substring(0,10)</td>
+    <td><a href="/Admin/AboutSil/@x.AboutID" class="btn btn-danger">Sil</a></td>
+    <td><a href="/Admin/AboutGetir/@x.AboutID" class="btn btn-warning">Yenile</a></td>
+</tr>
+    }
+
+</table>
+<a href="/Admin/YeniAbout/" class="btn btn-primary">Yeni Haqqimizda Yarat </a>
+<a href="@Url.Action("ExportPDFAbout","Admin")" class="btn btn-primary">Pdf </a>

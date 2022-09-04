@@ -1,0 +1,54 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<LessonComment>
+@{
+    ViewBag.Title = "LessonComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ders Serhlerin Siyahisi</h2>
+<br />
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-1">Search Day</div>
+        <div class="col-md-2"><input type="text" id="TextName" name="TextName" /></div>
+        <div class="col-md-1"><input class="btn btn-primary" type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+</form>
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Mail</th>
+        <th>Lesson Name</th>
+        <th>Telefon</th>
+        <th>Saat</th>
+        <th>Tarix</th>
+        <th>Text</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+
+            <td>@x.ID</td>
+            <td>@x.Name</td>
+            <td>@x.Mail</td>
+            <td>@x.LessonInformation.TextName</td>
+            <td>@x.Telefon</td>
+            <td>@x.Saat.ToString("hh:mm:ss")</td>
+            <td>@x.Tarix.ToString("dd.MM.yyyy")</td>
+            <td>@x.Text</td>
+            <td><a href="/Admin/LessonCommentSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/LessonCommentGetir/@x.ID" class="btn btn-warning">Yenile</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/YeniLessonComment/" class="btn btn-primary">Yeni Ders Sherh </a>
+<a href="@Url.Action("ExportPDFLessonComment","Admin")" class="btn btn-primary">Pdf </a>
+
+
+

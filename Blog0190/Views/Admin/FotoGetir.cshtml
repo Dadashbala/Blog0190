@@ -1,0 +1,23 @@
+﻿@model Blog0190.Models.Sinifler.Foto
+@{
+    ViewBag.Title = "FotoGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Foto Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("FotoYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.FotoId)
+    @Html.TextBoxFor(x => x.FotoId, new { @class = "form-control", @readonly = "readonly" })
+    <br />  
+    @Html.LabelFor(x => x.FotoUrl)
+    @Html.TextAreaFor(x => x.FotoUrl, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Foto Yenile</button>
+}
+
+
+
+

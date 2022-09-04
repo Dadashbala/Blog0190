@@ -1,0 +1,50 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<BlogComment>
+@{
+    ViewBag.Title = "BLogComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Sherhlerin Siyahisi</h2>
+<br />
+<form id="formSearch" method="post">
+    <div class="row" id="SearchBox">
+        <div class="col-md-1">Search Day</div>
+        <div class="col-md-2"><input type="datetime" id="TextName" name="TextName" /></div>
+        <div class="col-md-1"><input class="btn btn-primary" type="submit" id="submitsearch" value="Search" /></div>
+    </div>
+</form>
+<br />
+<table class="table table-bordered">
+
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Mail</th>
+        <th>Blog Name</th>
+        <th>Telefon</th>
+        <th>Saat</th>
+        <th>Tarix</th>
+        <th>Text</th>
+        <th>Sil</th>
+        <th>Yenile</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Name</td>
+            <td>@x.Mail</td>
+            <td>@x.Blog.TextName</td>
+            <td>@x.Telefon</td>
+            <td>@x.Saat.ToString("hh:mm:ss")</td>
+            <td>@x.Tarix.ToString("dd.MM.yyyy")</td>
+            <td>@x.Text</td>
+            <td><a href="/Admin/BlogCommentSil/@x.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Admin/BlogCommentGetir/@x.ID" class="btn btn-warning">Yenile</a></td>
+        </tr>
+    }
+</table>
+<a href="/Admin/YeniBlogComment/" class="btn btn-primary">Yeni Blog Serhi  </a>
+<a href="@Url.Action("ExportPDFBLogComment","Admin")" class="btn btn-primary">Pdf </a>
+

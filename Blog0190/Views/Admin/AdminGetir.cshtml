@@ -1,0 +1,24 @@
+﻿@model Blog0190.Models.Sinifler.Admin
+@{
+    ViewBag.Title = "AdminGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Admin Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("AdminYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.User)
+    @Html.TextBoxFor(x => x.User, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Password)
+    @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+    <br />
+
+
+    <button class="btn btn-success">Admin Yenile</button>
+}
+

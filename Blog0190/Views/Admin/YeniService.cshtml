@@ -1,0 +1,21 @@
+﻿@model Blog0190.Models.Sinifler.ServiceInformation
+@{
+    ViewBag.Title = "YeniService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Servis Yaratmag Ucun Panel</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.ServicesName)
+    @Html.TextBoxFor(x => x.ServicesName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ServiceIcon)
+    @Html.TextBoxFor(x => x.ServiceIcon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ServicesText)
+    @Html.TextAreaFor(x => x.ServicesText, 10, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Servis Yarat</button>
+</form>
+

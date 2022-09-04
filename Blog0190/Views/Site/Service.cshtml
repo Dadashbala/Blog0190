@@ -1,0 +1,30 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<ServiceInformation>
+@{
+    ViewBag.Title = "Service";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<!-- Service Start -->
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <h1 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h1>
+        </div>
+        <div class="row">
+            @foreach (var x in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+
+                    <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                        <img style="width:70px; height:50px;" src="@x.ServiceIcon" />
+                        <h5 class="mb-2">@x.ServicesName</h5>
+                        <p class="m-0">@x.ServicesText</p>
+                    </div>
+                    
+                </div>
+            }
+            </div>
+    </div>
+</div>
+<!-- Service End -->

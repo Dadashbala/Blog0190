@@ -1,0 +1,26 @@
+﻿@model Blog0190.Models.Sinifler.ServiceInformation
+@{
+    ViewBag.Title = "ServiceGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Servis Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("ServiceYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ServicesID)
+    @Html.TextBoxFor(x => x.ServicesID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.ServicesName)
+    @Html.TextBoxFor(x => x.ServicesName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ServiceIcon)
+    @Html.TextBoxFor(x => x.ServiceIcon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.ServicesText)
+    @Html.TextAreaFor(x => x.ServicesText, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Servis Yenile</button>
+}
+

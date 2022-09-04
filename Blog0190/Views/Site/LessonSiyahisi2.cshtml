@@ -1,0 +1,23 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<LessonInformation>
+
+
+<!-- Kenar Ders List -->
+<div class="mb-5">
+    <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Dersler</h4>
+    <div class="bg-white" style="padding: 30px;">
+        <ul class="list-inline m-0">
+            @foreach (var x in Model)
+            {
+                <b>
+                <li class="mb-3 d-flex justify-content-between align-items-center">
+                    <a class="text-dark" href="/Site/LessonDetay/@x.LessonID">
+                        @x.TextName
+                    </a>
+                </li>
+                <hr />
+                </b>
+            }
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿@model Blog0190.Models.Sinifler.BlogComment
+@{
+    ViewBag.Title = "YeniBlogComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Bloga Serh Yaratmag Ucun Panel</h2>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogID)
+    @Html.TextBoxFor(x => x.BlogID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Telefon)
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarix)
+    @Html.TextBoxFor(x => x.Tarix, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Text)
+    @Html.TextAreaFor(x => x.Text, 10, 1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary">Bloga Serh Yarat</button>
+</form>
+
+
+

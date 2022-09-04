@@ -1,0 +1,39 @@
+﻿@model Blog0190.Models.Sinifler.LessonComment
+@{
+    ViewBag.Title = "LessonCommentGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Ders Sherhini Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("LessonCommentYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.LessonID)
+    @Html.TextBoxFor(x => x.LessonID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Telefon)
+    @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Saat)
+    @Html.TextBoxFor(x => x.Saat, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarix)
+    @Html.TextBoxFor(x => x.Tarix, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Text)
+    @Html.TextAreaFor(x => x.Text, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Blog Yenile</button>
+}
+
+

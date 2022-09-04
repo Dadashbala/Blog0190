@@ -1,0 +1,79 @@
+﻿@using Blog0190.Models.Sinifler
+@model List<Blog>
+
+
+@{
+    ViewBag.Title = "BlogDetay";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+
+<!-- Blog Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- Blog Detail Start -->
+                <div class="pb-3">
+                    @foreach (var x in Model)
+                    {
+                        <div class="bg-white mb-3" style="padding: 70px;">
+
+
+                            <h4 class="mb-3">@x.TextName</h4>
+                            <p>@x.Date.ToString("dd.MM.yyyy")</p>
+                            <img class="img-fluid w-50 float-left mr-4 mb-2" src="@x.Image">
+                            <p>
+                                @x.Text
+                            </p>
+
+                        </div>
+                    }
+                </div>
+
+                <!-- Blog Detail End -->
+                <!-- Comment List Start -->
+
+                @Html.Action("blogcommentlerigoster", "Site")
+
+                <!-- Comment List End -->
+                <!-- Comment Form Start -->
+                @Html.Action("BlogYorumYaz", "Site")
+                <!-- Comment Form End -->
+            </div>
+
+            <div class="col-lg-4 mt-5 mt-lg-0">
+                <!-- Author Bio -->
+                @Html.Action("AboutInTheHome", "Site")
+
+                <!-- Search Form -->
+                <div class="mb-5">
+                    <div class="bg-white" style="padding: 30px;">
+                        <div class="input-group">
+                            <input type="text" class="form-control p-4" placeholder="Keyword">
+                            <div class="input-group-append">
+                                <span class="input-group-text bg-primary border-primary text-white">
+                                    <i class="fa fa-search"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                @Html.Action("BlogSiyahisi2", "Site")
+
+
+                @Html.Action("LessonSiyahisi2", "Site")
+                <!-- Recent Post -->
+                <!-- Tag Cloud -->
+                @Html.Action("PageKecid", "Site")
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+

@@ -1,0 +1,45 @@
+﻿<div class="col-lg-8">
+    <div class="contact-form bg-white" style="padding: 30px;">
+        <div id="success"></div>
+        <form name="sentMessage" id="contactForm" novalidate="novalidate" method="post" action="https://formsubmit.co/dadaw.aliyev.95@gmail.com" method="Post">
+            <div class="form-row">
+                <div class="control-group col-sm-6">
+                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name"
+                           required="required" data-validation-required-message="Please enter your name" name="NameSurname"/>
+                    <p class="help-block text-danger"></p>
+                </div>
+                <div class="control-group col-sm-6">
+                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email"
+                           required="required" data-validation-required-message="Please enter your email" name="Email" />
+                    <p class="help-block text-danger"></p>
+                </div>
+
+            </div>
+            <div class="control-group">
+                <input type="tel" class="form-control p-4" id="telephone"
+                       required="required" data-validation-required-message="Please enter a subject" name="Tel" maxlength="13" value="+994" />
+                <p class="help-block text-danger"></p>
+                <input type="hidden" class="form-control p-4" id="subject"
+                       required="required" data-validation-required-message="Please enter a date" name="Date" value="@DateTime.Now" />
+                <p class="help-block text-danger"></p>
+                <input type="hidden" class="form-control p-4" id="subject"
+                       required="required" data-validation-required-message="Please enter a date" name="Time" value="@DateTime.Now" />
+                <p class="help-block text-danger"></p>
+
+
+            </div>
+            <div class="control-group">
+                <textarea class="form-control py-3 px-4" rows="5" id="message" placeholder="Message"
+                          required="required"
+                          data-validation-required-message="Please enter your message" name="Message"></textarea>
+                <p class="help-block text-danger"></p>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary py-3 px-4" type="submit" id="sendMessageButton">Send Message</button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+

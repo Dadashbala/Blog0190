@@ -1,0 +1,31 @@
+﻿@model Blog0190.Models.Sinifler.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Yenileme Paneli</h2>
+<br />
+@using (Html.BeginForm("BlogYenile", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.BlogID)
+    @Html.TextBoxFor(x => x.BlogID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.TextName)
+    @Html.TextBoxFor(x => x.TextName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Date)
+    @Html.TextBoxFor(x => x.Date, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Image)
+    @Html.TextBoxFor(x => x.Image, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Text)
+    @Html.TextAreaFor(x => x.Text, 10, 1, new { @class = "form-control" })
+    <br />
+
+    <button class="btn btn-success">Blog Yenile</button>
+}
+
+
+
